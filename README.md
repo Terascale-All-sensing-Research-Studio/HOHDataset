@@ -25,10 +25,10 @@ This is a version of the dataset that includes all object-related data, includin
   - Simplified_2000 (to approximately 2,000 vertices) ("*_simplified_2000.obj")
 - All object metadata ("Metadata_HOH.csv")
 
-
-
 Please visit the project page for more information and access to the mentioned dataset variants: https://hohdataset.github.io/
+Additionally, please look at the `examples` directory for code demonstrations on how to use various components of the data.
 
-
-TODO:
-- write documentation on missing_seg_ptcld.json and object_alignment_problems.json
+NOTE: File `missing_segmented_pointcloud.json` contains a list of known missing segmented point clouds. Point clouds may be missing due to 
+      the frame being dropped during recording or significant failure during tracking. Access this list by loading the json file, accessing
+      the key "files", and selecting an entry in the list. Each list entry is a dict containing the handover ("sample"), the frame index ("frame_idx"),
+      and the target ("target") that is missing.
