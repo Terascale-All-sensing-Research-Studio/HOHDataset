@@ -27,6 +27,7 @@ This is a version of the dataset that includes all object-related data, includin
 
 Please visit the project page for more information and access to the mentioned dataset variants: https://hohdataset.github.io/
 Additionally, please look at the `examples` directory for code demonstrations on how to use various components of the data.
+To extract the data, please place all .zip files that you intend to use in the `data` directory, and then run extract_data.py.
 
 NOTE: File `missing_segmented_pointcloud.json` contains a list of known missing segmented point clouds. Point clouds may be missing due to 
       the frame being dropped during recording or significant failure during tracking. Access this list by loading the json file, accessing
