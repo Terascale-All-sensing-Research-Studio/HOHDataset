@@ -27,7 +27,7 @@ This is a version of the dataset that includes all object-related data, includin
   - Simplified_2000 (to approximately 2,000 vertices) ("*_simplified_2000.obj")
 - All object metadata ("Metadata_HOH.csv")
 
-
+# Data Extraction
 To extract the data, please place all .zip files that you intend to use in the `data` directory, and then run extract_data.py.
 Additionally, please look at the `examples` directory for code demonstrations on how to use various components of the data.
 
