@@ -1,3 +1,5 @@
+Please check out our paper (https://arxiv.org/abs/2310.00723) and project page (https://hohdataset.github.io) for more information and access to the dataset variants.
+
 # HOH Dataset Variants Available
 
 # HOH Keyframe Dataset
@@ -25,9 +27,10 @@ This is a version of the dataset that includes all object-related data, includin
   - Simplified_2000 (to approximately 2,000 vertices) ("*_simplified_2000.obj")
 - All object metadata ("Metadata_HOH.csv")
 
-Please visit the project page for more information and access to the mentioned dataset variants: https://hohdataset.github.io/
-Additionally, please look at the `examples` directory for code demonstrations on how to use various components of the data.
+
 To extract the data, please place all .zip files that you intend to use in the `data` directory, and then run extract_data.py.
+Additionally, please look at the `examples` directory for code demonstrations on how to use various components of the data.
+
 
 NOTE: File `missing_segmented_pointcloud.json` contains a list of known missing segmented point clouds. Point clouds may be missing due to 
       the frame being dropped during recording or significant failure during tracking. Access this list by loading the json file, accessing
