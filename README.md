@@ -1,6 +1,6 @@
-Please check out our paper (https://arxiv.org/abs/2310.00723) and project page (https://hohdataset.github.io) for more information and access to the dataset variants.
+Please check out our paper (https://arxiv.org/abs/2310.00723) and project page (https://hohdataset.github.io) 
+for more information and access to the dataset variants mentioned below.
 
-# HOH Dataset Variants Available
 
 # HOH Keyframe Dataset
 This is a version of HOH that includes data for the O, G, T, and R keyframes as defined in the HOH paper. Data included:
