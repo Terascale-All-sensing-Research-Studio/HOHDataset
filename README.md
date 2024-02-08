@@ -40,7 +40,17 @@ To extract the data, please place all .zip files that you intend to use in the `
 Additionally, please look at the `examples` directory for code demonstrations on how to use various components of the data.
 
 
-NOTE: File `missing_segmented_pointcloud.json` contains a list of known missing segmented point clouds. Point clouds may be missing due to 
+NOTE: File `missing_segmented_pointclouds.json` contains a list of known missing segmented point clouds. Point clouds may be missing due to 
       the frame being dropped during recording or significant failure during tracking. Access this list by loading the json file, accessing
       the key "files", and selecting an entry in the list. Each list entry is a dict containing the handover ("sample"), the frame index ("frame_idx"),
       and the target ("target") that is missing.
+
+NOTE: File `known_bad_alignments.json` contains a list of frame windows in which the object 3D model alignment quality is bad or unknown.
+      Access this list for a particular handover using key "<capture_directory>_<handover_index>", and then key "windows". This will yield 
+      a list of frame index ranges denoting windows of bad alignment.
+
+NOTE: File `missing_masks.json` contains a list of handovers which are missing any keyframe masks. Access the data for a particular handover
+      using key "<capture_directory>_<handover_index>", and then key "object", "giver", or "receiver" to access the corresponding list of 
+      missing masks. 
+
+NOTE: Unless otherwise accounted for in the above files, assume missing data is due to a dropped frame during recording. 

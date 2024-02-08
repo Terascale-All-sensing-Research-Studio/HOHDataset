@@ -1,0 +1,268 @@
+{
+  "04921-12586-S33_6": {
+    "object": [],
+    "giver": [],
+    "receiver": [
+      "cam_2_frame_7695",
+      "cam_2_frame_7760",
+      "cam_2_frame_7823"
+    ]
+  },
+  "12586-04921-S30_2": {
+    "object": [],
+    "giver": [
+      "cam_0_frame_2142",
+      "cam_0_frame_2214",
+      "cam_0_frame_2265"
+    ],
+    "receiver": []
+  },
+  "12586-04921-S53_14": {
+    "object": [],
+    "giver": [],
+    "receiver": [
+      "cam_0_frame_14637",
+      "cam_0_frame_14678",
+      "cam_0_frame_14716"
+    ]
+  },
+  "12634-49260-S15_1": {
+    "object": [],
+    "giver": [],
+    "receiver": [
+      "cam_0_frame_1576",
+      "cam_0_frame_1617",
+      "cam_0_frame_1669"
+    ]
+  },
+  "13026-17623-S1_13": {
+    "object": [],
+    "giver": [
+      "cam_2_frame_12144",
+      "cam_2_frame_12190",
+      "cam_2_frame_12237"
+    ],
+    "receiver": []
+  },
+  "13026-17623-S18_0": {
+    "object": [],
+    "giver": [
+      "cam_0_frame_355",
+      "cam_0_frame_400",
+      "cam_0_frame_453"
+    ],
+    "receiver": []
+  },
+  "13026-17623-S18_15": {
+    "object": [],
+    "giver": [
+      "cam_0_frame_13208",
+      "cam_0_frame_13237",
+      "cam_0_frame_13289"
+    ],
+    "receiver": []
+  },
+  "13026-17623-S35_2": {
+    "object": [],
+    "giver": [
+      "cam_2_frame_1930",
+      "cam_2_frame_1966",
+      "cam_2_frame_2013"
+    ],
+    "receiver": []
+  },
+  "13026-17623-S52_2": {
+    "object": [],
+    "giver": [
+      "cam_0_frame_1692",
+      "cam_0_frame_1721",
+      "cam_0_frame_1782"
+    ],
+    "receiver": []
+  },
+  "17623-13026-S1_5": {
+    "object": [
+      "cam_0_frame_4297",
+      "cam_0_frame_4325",
+      "cam_0_frame_4354"
+    ],
+    "giver": [],
+    "receiver": []
+  },
+  "17623-13026-S35_16": {
+    "object": [],
+    "giver": [],
+    "receiver": [
+      "cam_0_frame_12039",
+      "cam_0_frame_12071",
+      "cam_0_frame_12123"
+    ]
+  },
+  "26718-29401-S52_13": {
+    "object": [],
+    "giver": [],
+    "receiver": [
+      "cam_2_frame_13646",
+      "cam_2_frame_13692",
+      "cam_2_frame_13759"
+    ]
+  },
+  "29401-26718-S22_8": {
+    "object": [],
+    "giver": [
+      "cam_2_frame_7353",
+      "cam_2_frame_7392",
+      "cam_2_frame_7449"
+    ],
+    "receiver": []
+  },
+  "36817-46823-S1_4": {
+    "object": [
+      "cam_1_frame_3790"
+    ],
+    "giver": [],
+    "receiver": []
+  },
+  "42679-65094-S16_11": {
+    "object": [
+      "cam_0_frame_12922",
+      "cam_0_frame_12950",
+      "cam_0_frame_12995"
+    ],
+    "giver": [],
+    "receiver": []
+  },
+  "43017-98754-S1_3": {
+    "object": [],
+    "giver": [],
+    "receiver": [
+      "cam_0_frame_3105",
+      "cam_0_frame_3173",
+      "cam_0_frame_3231"
+    ]
+  },
+  "46157-01638-S1_13": {
+    "object": [],
+    "giver": [
+      "cam_0_frame_17234",
+      "cam_0_frame_17289",
+      "cam_0_frame_17365"
+    ],
+    "receiver": []
+  },
+  "53978-82931-S1_0": {
+    "object": [],
+    "giver": [],
+    "receiver": [
+      "cam_3_frame_520",
+      "cam_3_frame_562",
+      "cam_3_frame_660"
+    ]
+  },
+  "59810-86132-S43_6": {
+    "object": [
+      "cam_1_frame_6289"
+    ],
+    "giver": [],
+    "receiver": []
+  },
+  "61205-79132-S1_4": {
+    "object": [],
+    "giver": [
+      "cam_2_frame_3972",
+      "cam_2_frame_4012",
+      "cam_2_frame_4057"
+    ],
+    "receiver": []
+  },
+  "61205-79132-S17_0": {
+    "object": [],
+    "giver": [
+      "cam_2_frame_571",
+      "cam_2_frame_606",
+      "cam_2_frame_659"
+    ],
+    "receiver": []
+  },
+  "61205-79132-S52_9": {
+    "object": [],
+    "giver": [
+      "cam_2_frame_9345",
+      "cam_2_frame_9390",
+      "cam_2_frame_9445"
+    ],
+    "receiver": []
+  },
+  "61205-79132-S52_10": {
+    "object": [],
+    "giver": [
+      "cam_2_frame_10173",
+      "cam_2_frame_10211",
+      "cam_2_frame_10249"
+    ],
+    "receiver": []
+  },
+  "64098-79325-S1_8": {
+    "object": [],
+    "giver": [
+      "cam_2_frame_7970",
+      "cam_2_frame_8001",
+      "cam_2_frame_8062"
+    ],
+    "receiver": []
+  },
+  "65094-42679-S13_9": {
+    "object": [],
+    "giver": [
+      "cam_2_frame_9456",
+      "cam_2_frame_9489",
+      "cam_2_frame_9543"
+    ],
+    "receiver": []
+  },
+  "85603-50269-S1_1": {
+    "object": [],
+    "giver": [
+      "cam_0_frame_2039",
+      "cam_0_frame_2102",
+      "cam_0_frame_2168"
+    ],
+    "receiver": []
+  },
+  "85603-50269-S1_5": {
+    "object": [],
+    "giver": [
+      "cam_0_frame_5781",
+      "cam_0_frame_5832",
+      "cam_0_frame_5892"
+    ],
+    "receiver": []
+  },
+  "85603-50269-S51_17": {
+    "object": [],
+    "giver": [
+      "cam_0_frame_15801",
+      "cam_0_frame_15841",
+      "cam_0_frame_15929"
+    ],
+    "receiver": []
+  },
+  "86132-59810-S50_2": {
+    "object": [],
+    "giver": [
+      "cam_0_frame_3670",
+      "cam_0_frame_3727",
+      "cam_0_frame_3783"
+    ],
+    "receiver": []
+  },
+  "65928-82756-S52_13": {
+    "object": [
+      "cam_3_frame_13166",
+      "cam_3_frame_13212",
+      "cam_3_frame_13285"
+    ],
+    "giver": [],
+    "receiver": []
+  }
+}
