@@ -27,6 +27,14 @@ This is a version of the dataset that includes all object-related data, includin
   - Simplified_2000 (to approximately 2,000 vertices) ("*_simplified_2000.obj")
 - All object metadata ("Metadata_HOH.csv")
 
+If you need data not included in the above subsets, please e-mail the paper authors for access. The data is many terabytes and will
+have to be downloaded manually. The following are not included in the above data subsets:
+- Kinect Color images for non-keyframes
+- Object, Giver Hand, Receiver Hand segmentation masks for non-keyframes
+- OpenPose skeletons for each participant for non-keyframes
+- PointGrey color images
+- Full scene point clouds for non-keyframes
+
 # Data Extraction
 To extract the data, please place all .zip files that you intend to use in the `data` directory, and then run extract_data.py.
 Additionally, please look at the `examples` directory for code demonstrations on how to use various components of the data.
