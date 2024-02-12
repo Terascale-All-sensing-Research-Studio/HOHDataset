@@ -63,7 +63,7 @@ def get_3dm_alignment_to_frame(alignments_dict, keyframes_dict, frame_idx):
         return transform
        
     transform = np.array(alignments_dict["{}_{}".format(keyframes_dict["o_frame_index"], keyframes_dict["g_frame_index"])]) @ transform
-    elif frame_idx == keyframes_dict["g_frame_index"]:
+    if frame_idx == keyframes_dict["g_frame_index"]:
         return transform
     
     for i in range(keyframes_dict["g_frame_index"]+1, frame_idx+1):
