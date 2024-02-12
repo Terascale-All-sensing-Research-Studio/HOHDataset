@@ -49,26 +49,26 @@ def construct_3dm_align_path(capture_dir, handover_idx):
     """
     return constants.THREEDM_ALIGNMENTS_PATH.format(capture_dir, capture_dir, handover_idx)
 
-# def get_3dm_alignment_to_frame(alignments_dict, keyframes_dict, frame_idx):
-#     """
-#     returns a 4x4 transformation matrix that will align the object 3D model
-#     to the scene at frame frame_idx using trimesh.TriMesh.apply_transform().
-#     - alignments_dict is from loader(construct_3dm_align_path()).
-#     - keyframes_dict is a dict containing keys <O_frame_index>, <G_frame_index>, 
-#       <T_frame_index>, <R_frame_index> (from get_this_handover_metadata()).
-#     - frame_idx is the frame index that you wish to align to.
-#     """
-#     transform = np.array(alignments_dict["3dm_to_O"])
-#     if frame_idx == keyframes_dict["o_frame_index"]:
-#         return transform
-        
-#     transform = np.array(alignments_dict["{}_{}".format(keyframes_dict["o_frame_index"], keyframes_dict["g_frame_index"])]) @ transform
-#     elif frame_idx == keyframes_dict["g_frame_index"]:
-#         return transform
+def get_3dm_alignment_to_frame(alignments_dict, keyframes_dict, frame_idx):
+    """
+    returns a 4x4 transformation matrix that will align the object 3D model
+    to the scene at frame frame_idx using trimesh.TriMesh.apply_transform().
+    - alignments_dict is from loader(construct_3dm_align_path()).
+    - keyframes_dict is a dict containing keys <O_frame_index>, <G_frame_index>, 
+      <T_frame_index>, <R_frame_index> (from get_this_handover_metadata()).
+    - frame_idx is the frame index that you wish to align to.
+    """
+    transform = np.array(alignments_dict["3dm_to_O"])
+    if frame_idx == keyframes_dict["o_frame_index"]:
+        return transform
+       
+    transform = np.array(alignments_dict["{}_{}".format(keyframes_dict["o_frame_index"], keyframes_dict["g_frame_index"])]) @ transform
+    elif frame_idx == keyframes_dict["g_frame_index"]:
+        return transform
     
-#     for i in range(keyframes_dict["g_frame_index"]+1, frame_idx+1):
-#         transform = np.array(alignments_dict[f"{i-1}_{i}"]) @ transform
-#     return transform
+    for i in range(keyframes_dict["g_frame_index"]+1, frame_idx+1):
+        transform = np.array(alignments_dict[f"{i-1}_{i}"]) @ transform
+    return transform
 
 def construct_capture_metadata_path(capture_dir):
     """
