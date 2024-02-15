@@ -53,4 +53,6 @@ NOTE: File `missing_masks.json` contains a list of handovers which are missing a
       using key "<capture_directory>_<handover_index>", and then key "object", "giver", or "receiver" to access the corresponding list of 
       missing masks. 
 
+NOTE: For the following participant IDs, no identifiable data is released: `19860`, `57643`, `98754`, `43017`
+
 NOTE: Unless otherwise accounted for in the above files, assume missing data is due to a dropped frame during recording. 
