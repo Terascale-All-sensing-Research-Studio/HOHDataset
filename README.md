@@ -36,7 +36,7 @@ have to be downloaded manually. The following are not included in the above data
 - Full scene point clouds for non-keyframes
 
 # Data Extraction
-To extract the data, please place all .zip files that you intend to use in the `data` directory, and then run extract_data.py.
+To extract the data subsets, please place all .zip files that you intend to use in the `data` directory, and then run extract_data.py.
 Additionally, please look at the `examples` directory for code demonstrations on how to use various components of the data.
 
 
