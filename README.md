@@ -2,8 +2,8 @@ Please check out our paper (https://arxiv.org/abs/2310.00723) and project page (
 for more information and access to the dataset variants mentioned below.
 
 To access the raw data, and all below dataset variants, connect to the datacenter using the following:
-Link: http://128.153.25.39:5000/sharing/XnQezt3Zv
-Password: E-mail authors for access.
+- Link: http://128.153.25.39:5000/sharing/XnQezt3Zv
+- Password: E-mail authors for access.
 
 # HOH Keyframe Dataset
 This is a version of HOH that includes data for the O, G, T, and R keyframes as defined in the HOH paper. Data included:
