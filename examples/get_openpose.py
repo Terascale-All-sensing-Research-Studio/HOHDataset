@@ -1,6 +1,8 @@
 import os 
 import sys 
 
+import numpy as np
+
 sys.path.append("../")
 import constants
 import data_utils as du

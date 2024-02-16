@@ -24,6 +24,8 @@ def loader(path):
         return np.load(path)
     elif extension == "json":
         return json.load(open(path, "r"))
+    elif extension == "json":
+        return json.load(open(path, "r"))
     else:
         print(f"unrecognized file extension: {extension}")
 
@@ -113,9 +115,9 @@ def load_masks(path, num_frames=1, mask_height=1080, mask_width=1920):
     for full capture: num_frames = R_frame_index - G_frame_index + 1
     otherwise:        num_frames = 1
     """
-    obj_mask = np.unpackbits(loader(path)["masks"])
-    obj_mask = np.reshape(obj_mask,(mask_height, mask_width, num_frames))
-    return obj_mask
+    masks = np.unpackbits(loader(path)["masks"])
+    masks = np.reshape(masks,(mask_height, mask_width, num_frames))
+    return masks
 
 def construct_openpose_path(capture_dir, handover_idx, cam_idx, frame_idx):
     """
@@ -127,7 +129,7 @@ def construct_openpose_path(capture_dir, handover_idx, cam_idx, frame_idx):
 def organize_openpose_skeleton(person_keypoints: np.ndarray):
     """
     person_keypoints should be ndarray shaped like (25, 3), representing a single skeleton.
-    The row index is the joint number per the BODY_25 OpenPose format.
+    The cam index is the joint number per the BODY_25 OpenPose format.
     The first and second column indices are the (x, y) coordinates of the joint, respectively
     The third column is the detection confidence for that joint.
     
@@ -146,11 +148,73 @@ def construct_object_model_path(object_id, model_type="simplified"):
     elif int(object_id) == 120:
         return constants.OBJECT_120_PATH
         
-    assert model_type in ["full", "watertight", "simplified", "simplified_2000"]
-    #NOTE: also this caused me errors 
-    # assert model_type in ["full", "watertight", "simplified", "simplified_2000"],
-        # "please pass valid model type: full, watertight, simplified, simplified_2000"
+    assert model_type in ["full", "watertight", "simplified", "simplified_2000"], "please pass valid model type: full, watertight, simplified, simplified_2000"
     if model_type == "full":
         return constants.OBJECT_MODEL_PATH.format("full", object_id, "cleaned")
     return constants.OBJECT_MODEL_PATH.format(model_type, object_id, model_type)
     
+def construct_lookuptable_path(capture_dir):
+    """
+    constructs path to a lightsync lookup table, used for pulling synchronized raw Kinect image data.
+    use load_lut() to load the data at this file path.
+    """
+    return constants.SYNC_LUT_PATH.format(capture_dir)
+
+def load_lut(path):
+    """
+    loads and formats a lightsync lookup table for raw Kinect image data. 
+    returns lookup table in format (num_frames, 4), where 4 is the number of cameras.
+    each element is the epoch timestamp of a Kinect image.
+    """
+    return np.loadtxt(path, delimiter=',')
+
+def get_image_paths(capture_dir, modality="color"):
+    """
+    this function should be used with RAW HOH DATA
+    loads synchronization data and returns a (num_frames, 4) numpy array of paths to images.
+    this array can be accessed by arr[frame_idx, cam_idx].
+    simply use loader() to load individual image file paths.
+    """
+    assert modality in ["kcolor", "color", "depth"], "please pass valid modality in [kcolor, color, depth]"
+    if modality in ["kcolor", "color"]:
+        image_name_template = constants.COLOR_IMAGE_NAME
+    else:
+        image_name_template = constants.DEPTH_IMAGE_NAME
+
+    # load lookup table data
+    lut = load_lut(construct_lookuptable_path(capture_dir))
+
+    # construct paths
+    for timestep in range(lut.shape[0]): # for each timestep
+        for cam in range(lut.shape[1]): # for each column/camera
+            this_image_name = image_name_template.format(lut[timestep, cam])
+            this_cam = constants.CAM_NAMES[cam]
+            lut[timestep, cam] = constants.RAW_IMAGES_PATH.format(capture_dir, this_cam, this_image_name)
+
+    return lut
+
+def construct_raw_data_masks_path(capture_dir, cam_idx, handover_idx, target):
+    """
+    this function should be used with RAW HOH DATA
+    constructs path to bulk mask file.
+    valid targets: [giver, receiver, object]
+    use load_masks() to load data at this path.
+    """
+    assert target in ["giver", "receiver", "object"], "please pass valid target in: [giver, receiver, object]"
+    return constants.RAW_KCOLOR_MASK_PATH.format(capture_dir, cam_idx, target, handover_idx)
+
+def construct_raw_data_openpose_path(capture_dir, handover_idx, frame_idx, cam_idx):
+    """
+    this function should be used with RAW HOH DATA
+    constructs path to an openpose skeleton file.
+    simply use loader() to load this file path.
+    """
+    return constants.RAW_OPENPOSE_SKELETON_PATH.format(capture_dir, handover_idx, frame_idx, cam_idx)
+
+def construct_raw_data_scene_pointcloud_path(capture_dir, handover_idx, frame_idx):
+    """
+    this function should be used with RAW HOH DATA
+    constructs path to a full scene point cloud file.
+    simply use loader() to load this file path.
+    """
+    return constants.RAW_SCENE_POINTCLOUD_PATH.format(capture_dir, handover_idx, frame_idx)
