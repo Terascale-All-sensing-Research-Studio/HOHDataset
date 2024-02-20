@@ -22,7 +22,7 @@ if __name__ == "__main__":
     input("Continue? Ctrl+C to quit.")
 
     DATA_TO_EXTRACT = [ os.path.join(constants.REPO_PATH, "data", f"HOH_Minimum_Datset{f}.zip") for f in [1,2,3] ] # for HOH Minimum Dataset
-    DATA_TO_EXTRACT.append(os.path.join(constants.REPO_PATH, "data", "HOH_Keyframe_dataset.zip")) # for HOH Keyframe Dataset
+    DATA_TO_EXTRACT.extend([ os.path.join(constants.REPO_PATH, "data", f"HOH_Keyframe_Datset{f}.zip") for f in [1,2,3] ]) # for HOH Keyframe Dataset
     DATA_TO_EXTRACT.append(os.path.join(constants.REPO_PATH, "data", "full_116_and_120.zip")) # for HOH Objects
     DATA_TO_EXTRACT.append(os.path.join(constants.REPO_PATH, "data", "full.zip")) # for HOH Objects
     DATA_TO_EXTRACT.append(os.path.join(constants.REPO_PATH, "data", "watertight.zip")) # for HOH Objects
