@@ -21,6 +21,7 @@ OBJECT_120_PATH = os.path.join(DATA_ROOTDIR, "120/Baby_Yoda.obj") # object 120 o
 SYNC_LUT_PATH = os.path.join(DATA_ROOTDIR, "Sync_Info", "{}_azure_lightsync_lut.txt") #.format(capture_dir)
 RAW_IMAGES_PATH = os.path.join(DATA_ROOTDIR, "{}/Azure/{}/{}") #.format(capture_dir, camera_name, image_name)
 RAW_KCOLOR_MASK_PATH = os.path.join(DATA_ROOTDIR, "{}/MaskTracking/{}/{}_{}_masks.npz") #.format(capture_dir, cam_idx, target, handover_idx)
+RAW_KCOLOR_OBJECT_ONLY_MASK_PATH = os.path.join(DATA_ROOTDIR, "{}/MaskTracking/{}/object_only_{}_mask.npz") #.format(capture_dir, cam_idx, handover_idx)
 RAW_OPENPOSE_SKELETON_PATH = os.path.join(DATA_ROOTDIR, "{}/OpenPose/{}/{}_cam{}_keypoints.json") #.format(capture_dir, handover_idx, frame_idx, cam_idx)
 RAW_SCENE_POINTCLOUD_PATH = os.path.join(DATA_ROOTDIR, "{}/PCFull/full/{}/full_kcolor_frame{}.ply") #.format(capture_dir, handover_idx, frame_idx)
 COLOR_IMAGE_NAME = "azurecolor-{}.jpg" #.format(timestamp)

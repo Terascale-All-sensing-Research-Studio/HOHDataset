@@ -203,6 +203,15 @@ def construct_raw_data_masks_path(capture_dir, cam_idx, handover_idx, target):
     assert target in ["giver", "receiver", "object"], "please pass valid target in: [giver, receiver, object]"
     return constants.RAW_KCOLOR_MASK_PATH.format(capture_dir, cam_idx, target, handover_idx)
 
+def construct_raw_data_object_only_masks_path(capture_dir, cam_idx, handover_idx):
+    """
+    this function should be used with RAW HOH DATA
+    constructs path to Gpre frame object-only mask file.
+    valid targets: [giver, receiver, object]
+    use load_masks() to load data at this path, with num_frames=1.
+    """
+    return constants.RAW_KCOLOR_OBJECT_ONLY_MASK_PATH.format(capture_dir, cam_idx, handover_idx)
+
 def construct_raw_data_openpose_path(capture_dir, handover_idx, frame_idx, cam_idx):
     """
     this function should be used with RAW HOH DATA
