@@ -227,3 +227,11 @@ def construct_raw_data_scene_pointcloud_path(capture_dir, handover_idx, frame_id
     simply use loader() to load this file path.
     """
     return constants.RAW_SCENE_POINTCLOUD_PATH.format(capture_dir, handover_idx, frame_idx)
+
+def all_samples():
+    """
+    this function loads a list of all handover names
+    according to the following scheme:
+    '{}_{}'.format(capture_directory, handover_index)
+    """
+    return loader(constants.SAMPLES_LIST_PATH)["samples"]

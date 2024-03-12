@@ -5,9 +5,10 @@ This file contains various global reference information for path construction an
 """
 
 # path-related variables
-REPO_PATH = os.path.dirname(os.path.abspath(__file__))
-DATA_ROOTDIR = os.path.join(REPO_PATH, "data", "HOH") # the root directory of the extracted HOH data
+REPO_ROOTDIR = os.path.dirname(os.path.abspath(__file__))
+DATA_ROOTDIR = os.path.join(REPO_ROOTDIR, "data", "HOH") # the root directory of the extracted HOH data
 
+SAMPLES_LIST_PATH = os.path.join(REPO_ROOTDIR, "data/samples_list.json") # for a list of all capture_dirs & handover_inds
 METADATA_PATH = os.path.join(DATA_ROOTDIR, "{}/reference/{}.json") #.format(capture_dir, capture_dir)
 SEGMENTED_POINTCLOUD_PATH = os.path.join(DATA_ROOTDIR, "{}/PCFiltered/{}/{}_frame{}.ply") #.format(capture_dir, handover_idx, target, frame_idx)
 SCENE_POINTCLOUD_PATH = os.path.join(DATA_ROOTDIR, "{}/PCFull/{}/frame{}.ply") #.format(capture_dir, handover_idx, frame_idx) 
