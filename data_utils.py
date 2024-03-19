@@ -143,9 +143,9 @@ def construct_object_model_path(object_id, model_type="simplified"):
     model_type options: full, watertight, simplified, simplified_2000
     simply use loader() to load this file path.
     """
-    if int(object_id) == 116:
+    if f"{object_id}" == "116":
         return constants.OBJECT_116_PATH
-    elif int(object_id) == 120:
+    elif f"{object_id}" == "120":
         return constants.OBJECT_120_PATH
         
     assert model_type in ["full", "watertight", "simplified", "simplified_2000"], "please pass valid model type: full, watertight, simplified, simplified_2000"
